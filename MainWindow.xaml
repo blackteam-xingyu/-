@@ -1,0 +1,99 @@
+﻿<Window x:Name="Form1" x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="艾欧泽亚生产护肝辅助v3.0" Height="600" Width="800" MinHeight="600" MinWidth="800" MaxHeight="600" MaxWidth="800" Icon=".\Icon\Icon_采矿工.png" WindowStartupLocation="CenterScreen" WindowState="Minimized" >
+    <Window.Resources>
+        <Style x:Key="defaultMenu" TargetType="MenuItem">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="45"/>
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+        <Style x:Key="MenuItem" TargetType="MenuItem">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <ControlTemplate x:Key="FilletTextBox" TargetType="{x:Type TextBox}">
+            <Border BorderBrush="Blue" BorderThickness="1" CornerRadius="7" Background="White">
+                <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="FilletButton" TargetType="{x:Type Button}">
+            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="10" Name="PART_Background">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="White" Offset="0.0" />
+                        <GradientStop Color="Blue" Offset="0.5" />
+                        <GradientStop Color="White" Offset="0.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Grid  Background="#dfdfdf" >
+        <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Top" Background="#f0f0f0" Grid.ColumnSpan="2">
+            <Menu x:Name="menu" Background="#f0f0f0">
+                <MenuItem Style="{StaticResource defaultMenu}" Header="菜单" >
+                    <MenuItem x:Name="setting" Style="{StaticResource MenuItem}" Header="   设置"  Click="setting_Click"/>
+                    <MenuItem x:Name="stop" Style="{StaticResource MenuItem}" Header="   停止并退出" Click="stop_Click" />
+                </MenuItem>
+                <MenuItem Style="{StaticResource defaultMenu}" Header="系统" >
+                    <MenuItem x:Name="start_game" Style="{StaticResource MenuItem}" Header="   打开游戏" Click="start_game_Click"/>
+                    <MenuItem x:Name="game_method" Style="{StaticResource MenuItem}" Header="   游戏路径" Click="game_method_Click" />
+                </MenuItem>
+                <MenuItem Style="{StaticResource defaultMenu}" Header="帮助" >
+                    <MenuItem Style="{StaticResource MenuItem}" Header="   帮助文件" >
+                        <MenuItem x:Name="developer_message" Style="{StaticResource MenuItem}" Header="   开发者手册" Click="developer_message_Click"/>
+                        <MenuItem x:Name="user_intraction" Style="{StaticResource MenuItem}" Header="   使用手册" Click="user_intraction_Click"/>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="check_environment" Style="{StaticResource MenuItem}" Header="   检测运行环境" Click="check_environment_Click"/>
+                    <MenuItem x:Name="register" Style="{StaticResource MenuItem}" Header="   注册插件" Click="register_Click"/>
+                    <MenuItem x:Name="about" Style="{StaticResource MenuItem}" Header="   关于" Click="about_Click"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center"
+                   Margin="95,100,126,417" 
+                   FontSize="40" FontFamily="方正舒体" 
+                   FontWeight="Heavy" 
+                   Foreground="#ff5500"  TextAlignment="Center" Text="欢迎使用艾欧泽亚生产护肝辅助"/>
+        <TextBlock 
+                   HorizontalAlignment="Center"
+                   Margin="240,184,267,323" 
+                   FontSize="22" FontFamily="Yu Gothic Medium" 
+                   Foreground="Red" 
+                   TextDecorations="Underline" Width="285" TextAlignment="Center"><Run Text="使用前一定要观看说明哦"/><Run Text="!!!"/></TextBlock>
+
+        <TextBlock  HorizontalAlignment="Center" Text="请输入宏的时间(单位为秒)" Margin="475,280,92,260" Width="225" TextDecorations="Underline" FontSize="16" Foreground="Blue" TextAlignment="Center"/>
+        <TextBlock  HorizontalAlignment="Center" TextWrapping="Wrap" Text="请输入需要制造的次数" Margin="95,280,502,260" FontSize="16" TextDecorations="Underline" Foreground="Blue" Width="195" TextAlignment="Center"/>
+        <TextBox x:Name="TestBox1" Template="{StaticResource FilletTextBox}" Margin="95,345,502,181" TextChanged="TextBox1_TextChanged" Text="0"/>
+        <TextBox x:Name="TestBox2" Template="{StaticResource FilletTextBox}" Margin="475,345,216,181" TextChanged="TestBox2_TextChanged" Text="0" />
+        <TextBox x:Name="TestBox3" Template="{StaticResource FilletTextBox}" Margin="600,345,92,181" TextChanged="TestBox3_TextChanged" Text="0" />
+        <Button Template="{StaticResource FilletButton}" Content="开始制作" Margin="185,430,443,80" Foreground="White" FontSize="24" FontFamily="华文琥珀" FontWeight="Heavy" Click="Button_Click_2" />
+        <Button Template="{StaticResource FilletButton}" Content="关闭脚本" Margin="446,430,182,80" Foreground="White" FontSize="24" FontFamily="华文琥珀" FontWeight="Heavy" Click="Button_Click"/>
+        <Button  Content="设置" Margin="712,184,10,323" Foreground="Black" FontSize="18" FontFamily="微软雅黑" FontWeight="Heavy" Click="Button_Click_1">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="10" Name="PART_Background">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="White" Offset="0.0" />
+                                <GradientStop Color="Silver" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+    </Grid>
+</Window>

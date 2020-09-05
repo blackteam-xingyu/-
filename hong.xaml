@@ -1,0 +1,160 @@
+﻿<Window 
+        x:Name="Form2"
+        x:Class="WpfApp1.hong"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="宏设置" Height="400" Width="600" Icon=".\Icon\Icon_采矿工.png" MinWidth="600" MinHeight="400" MaxWidth="600" MaxHeight="400" HorizontalContentAlignment="Center">
+    <Window.Resources>
+        <ControlTemplate x:Key="FilletButton" TargetType="{x:Type Button}">
+            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="10" x:Name="PART_Background">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="White" Offset="0.0" />
+                        <GradientStop Color="Blue" Offset="0.5" />
+                        <GradientStop Color="White" Offset="0.0" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid Background="#dfdfdf">
+        <Label Content="宏1" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="90,30,0,0" VerticalAlignment="Top" Height="50" Width="85" FontWeight="Bold" FontSize="30" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="宏2" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="425,30,0,0" VerticalAlignment="Top" Height="50" Width="85" FontWeight="Bold" FontSize="30" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <ComboBox x:Name="Combox1" HorizontalAlignment="Left" Margin="125,117,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox1_SelectionChanged" >
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="Crtl" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="Shift" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="Alt" Tag="3"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Combox2" HorizontalAlignment="Left" Margin="125,185,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox2_SelectionChanged">
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="Crtl" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="Shift" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="Alt" Tag="3"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Combox3" HorizontalAlignment="Left" Margin="125,250,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox3_SelectionChanged">
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="1" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="2" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="3" Tag="3"></ComboBoxItem>
+            <ComboBoxItem Content="4" Tag="4"></ComboBoxItem>
+            <ComboBoxItem Content="5" Tag="5"></ComboBoxItem>
+            <ComboBoxItem Content="6" Tag="6"></ComboBoxItem>
+            <ComboBoxItem Content="7" Tag="7"></ComboBoxItem>
+            <ComboBoxItem Content="8" Tag="8"></ComboBoxItem>
+            <ComboBoxItem Content="9" Tag="9"></ComboBoxItem>
+            <ComboBoxItem Content="0" Tag="10"></ComboBoxItem>
+            <ComboBoxItem Content="A" Tag="11"></ComboBoxItem>
+            <ComboBoxItem Content="B" Tag="12"></ComboBoxItem>
+            <ComboBoxItem Content="C" Tag="13"></ComboBoxItem>
+            <ComboBoxItem Content="D" Tag="14"></ComboBoxItem>
+            <ComboBoxItem Content="E" Tag="15"></ComboBoxItem>
+            <ComboBoxItem Content="F" Tag="16"></ComboBoxItem>
+            <ComboBoxItem Content="G" Tag="17"></ComboBoxItem>
+            <ComboBoxItem Content="H" Tag="18"></ComboBoxItem>
+            <ComboBoxItem Content="I" Tag="19"></ComboBoxItem>
+            <ComboBoxItem Content="J" Tag="20"></ComboBoxItem>
+            <ComboBoxItem Content="K" Tag="21"></ComboBoxItem>
+            <ComboBoxItem Content="L" Tag="22"></ComboBoxItem>
+            <ComboBoxItem Content="M" Tag="23"></ComboBoxItem>
+            <ComboBoxItem Content="N" Tag="24"></ComboBoxItem>
+            <ComboBoxItem Content="O" Tag="25"></ComboBoxItem>
+            <ComboBoxItem Content="P" Tag="26"></ComboBoxItem>
+            <ComboBoxItem Content="Q" Tag="27"></ComboBoxItem>
+            <ComboBoxItem Content="R" Tag="28"></ComboBoxItem>
+            <ComboBoxItem Content="S" Tag="29"></ComboBoxItem>
+            <ComboBoxItem Content="T" Tag="30"></ComboBoxItem>
+            <ComboBoxItem Content="U" Tag="31"></ComboBoxItem>
+            <ComboBoxItem Content="V" Tag="32"></ComboBoxItem>
+            <ComboBoxItem Content="W" Tag="33"></ComboBoxItem>
+            <ComboBoxItem Content="X" Tag="34"></ComboBoxItem>
+            <ComboBoxItem Content="Y" Tag="35"></ComboBoxItem>
+            <ComboBoxItem Content="Z" Tag="36"></ComboBoxItem>
+            <ComboBoxItem Content="-" Tag="37"></ComboBoxItem>
+            <ComboBoxItem Content="=" Tag="38"></ComboBoxItem>
+            <ComboBoxItem Content="," Tag="39"></ComboBoxItem>
+            <ComboBoxItem Content="." Tag="40"></ComboBoxItem>
+            <ComboBoxItem Content="/" Tag="41"></ComboBoxItem>
+            <ComboBoxItem Content=";" Tag="42"></ComboBoxItem>
+            <ComboBoxItem Content="'" Tag="43"></ComboBoxItem>
+            <ComboBoxItem Content="\" Tag="44"></ComboBoxItem>
+            <ComboBoxItem Content="`" Tag="45"></ComboBoxItem>
+            <ComboBoxItem Content="[" Tag="46"></ComboBoxItem>
+            <ComboBoxItem Content="]" Tag="47"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Combox4" HorizontalAlignment="Left" Margin="462,117,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox4_SelectionChanged">
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="Crtl" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="Shift" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="Alt" Tag="3"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Combox5" HorizontalAlignment="Left" Margin="462,185,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox5_SelectionChanged">
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="Crtl" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="Shift" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="Alt" Tag="3"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Combox6" HorizontalAlignment="Left" Margin="462,250,0,0" VerticalAlignment="Top" Width="120" Height="33" SelectionChanged="Combox6_SelectionChanged">
+            <ComboBoxItem Content=" " Tag="0"></ComboBoxItem>
+            <ComboBoxItem Content="1" Tag="1"></ComboBoxItem>
+            <ComboBoxItem Content="2" Tag="2"></ComboBoxItem>
+            <ComboBoxItem Content="3" Tag="3"></ComboBoxItem>
+            <ComboBoxItem Content="4" Tag="4"></ComboBoxItem>
+            <ComboBoxItem Content="5" Tag="5"></ComboBoxItem>
+            <ComboBoxItem Content="6" Tag="6"></ComboBoxItem>
+            <ComboBoxItem Content="7" Tag="7"></ComboBoxItem>
+            <ComboBoxItem Content="8" Tag="8"></ComboBoxItem>
+            <ComboBoxItem Content="9" Tag="9"></ComboBoxItem>
+            <ComboBoxItem Content="0" Tag="10"></ComboBoxItem>
+            <ComboBoxItem Content="A" Tag="11"></ComboBoxItem>
+            <ComboBoxItem Content="B" Tag="12"></ComboBoxItem>
+            <ComboBoxItem Content="C" Tag="13"></ComboBoxItem>
+            <ComboBoxItem Content="D" Tag="14"></ComboBoxItem>
+            <ComboBoxItem Content="E" Tag="15"></ComboBoxItem>
+            <ComboBoxItem Content="F" Tag="16"></ComboBoxItem>
+            <ComboBoxItem Content="G" Tag="17"></ComboBoxItem>
+            <ComboBoxItem Content="H" Tag="18"></ComboBoxItem>
+            <ComboBoxItem Content="I" Tag="19"></ComboBoxItem>
+            <ComboBoxItem Content="J" Tag="20"></ComboBoxItem>
+            <ComboBoxItem Content="K" Tag="21"></ComboBoxItem>
+            <ComboBoxItem Content="L" Tag="22"></ComboBoxItem>
+            <ComboBoxItem Content="M" Tag="23"></ComboBoxItem>
+            <ComboBoxItem Content="N" Tag="24"></ComboBoxItem>
+            <ComboBoxItem Content="O" Tag="25"></ComboBoxItem>
+            <ComboBoxItem Content="P" Tag="26"></ComboBoxItem>
+            <ComboBoxItem Content="Q" Tag="27"></ComboBoxItem>
+            <ComboBoxItem Content="R" Tag="28"></ComboBoxItem>
+            <ComboBoxItem Content="S" Tag="29"></ComboBoxItem>
+            <ComboBoxItem Content="T" Tag="30"></ComboBoxItem>
+            <ComboBoxItem Content="U" Tag="31"></ComboBoxItem>
+            <ComboBoxItem Content="V" Tag="32"></ComboBoxItem>
+            <ComboBoxItem Content="W" Tag="33"></ComboBoxItem>
+            <ComboBoxItem Content="X" Tag="34"></ComboBoxItem>
+            <ComboBoxItem Content="Y" Tag="35"></ComboBoxItem>
+            <ComboBoxItem Content="Z" Tag="36"></ComboBoxItem>
+            <ComboBoxItem Content="-" Tag="37"></ComboBoxItem>
+            <ComboBoxItem Content="=" Tag="38"></ComboBoxItem>
+            <ComboBoxItem Content="," Tag="39"></ComboBoxItem>
+            <ComboBoxItem Content="." Tag="40"></ComboBoxItem>
+            <ComboBoxItem Content="/" Tag="41"></ComboBoxItem>
+            <ComboBoxItem Content=";" Tag="42"></ComboBoxItem>
+            <ComboBoxItem Content="'" Tag="43"></ComboBoxItem>
+            <ComboBoxItem Content="\" Tag="44"></ComboBoxItem>
+            <ComboBoxItem Content="`" Tag="45"></ComboBoxItem>
+            <ComboBoxItem Content="[" Tag="46"></ComboBoxItem>
+            <ComboBoxItem Content="]" Tag="47"></ComboBoxItem>
+        </ComboBox>
+        <Label Content="功能按键1" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,117,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="功能按键2" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,185,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="功能按键1" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="347,117,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="功能按键2" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="347,185,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="普通按键" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="10,250,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Label Content="普通按键" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="347,250,0,0" VerticalAlignment="Top" Height="33" Width="115" FontWeight="Bold" FontSize="20" FontFamily="华文琥珀" HorizontalContentAlignment="Center" Foreground="Blue" />
+        <Button Template="{StaticResource FilletButton}" Content="保存设置" Margin="214,310,214,25" Foreground="White" FontSize="24" FontFamily="华文琥珀" FontWeight="Heavy" Click="Button_Click" />
+    </Grid>
+</Window>
